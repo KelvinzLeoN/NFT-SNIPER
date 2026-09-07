@@ -29,7 +29,7 @@ Run these **one line at a time**, pressing Enter after each:
 
 ```bash
 git clone https://github.com/KelvinzLeoN/NFT-SNIPER.git
-cd nft-public-mint
+cd NFT-SNIPER
 npm install
 npm run build
 ```
@@ -48,10 +48,10 @@ npm start -- --help
 
 **`Set-Location : A positional parameter cannot be found`** (Windows PowerShell)
 Two commands got pasted onto one line — you'll see something like
-`cd nft-public-mintnpm install`. Run each line separately.
+`cd NFT-SNIPERnpm install`. Run each line separately.
 
 **`Could not read package.json` / `Missing script: build`**
-You're in the wrong folder. Run `cd nft-public-mint` first.
+You're in the wrong folder. Run `cd NFT-SNIPER` first.
 
 **`npm` or `git` is not recognised**
 Install [Node.js 18+](https://nodejs.org) and [Git](https://git-scm.com/downloads),

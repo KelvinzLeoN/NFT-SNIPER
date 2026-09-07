@@ -1,19 +1,33 @@
-# NFT Public Mint Sniper
+# NFT-SNIPER
 
-A command-line tool for sniping **public** NFT mints on OpenSea's SeaDrop, across
-Ethereum, Base and Robinhood Chain.
+A fast, concurrency-safe CLI bot for competing in FCFS (first-come-first-served)
+NFT mints on OpenSea's SeaDrop drops, across Ethereum, Base, Robinhood Chain,
+HyperEVM, Ink, and Monad.
 
-It builds the mint transaction from **on-chain data only** - price, fee recipient
-and per-wallet limit all come straight from the SeaDrop contract. That means:
+Built for speed and reliability under real competitive conditions:
 
-- **No OpenSea account, login, or access token.**
-- **No API rate limits** to lose a mint to.
-- **Faster.** Every transaction is signed and serialised *before* the stage opens,
-  so at the exact start time the only work left is writing bytes to the network.
+- **Pre-signed transactions.** Wallets are warmed and signing happens the moment
+  a stage opens — no wasted time on wallet setup during the critical window.
+- **Parallel RPC dispatch.** Every signed transaction is blasted to all configured
+  RPC endpoints simultaneously; whichever accepts it first wins.
+- **Burst-retry timing.** Instead of trusting a single precisely-timed attempt,
+  the bot retries in a tight window around stage-open — resilient to clock drift
+  and network jitter.
+- **Automatic sold-out detection.** Background polling stops monitoring instantly
+  if a drop sells out, instead of wasting the full wait window on a dead stage.
+- **Nonce-safe concurrency.** A local nonce broker lets the same wallet mint
+  multiple different drops at the same time (or in overlapping windows) without
+  nonce collisions.
+- **Automatic gas configuration.** Max fee, priority fee, and gas limit are read
+  straight from `.env` — no manual prompts before every run.
+- **Multi-wallet.** Paste as many private keys as you like; they all warm up and
+  fire in parallel.
 
-Multi-wallet: paste as many keys as you like and they all fire in parallel.
+Requires an OpenSea API key (`OPENSEA_API_KEY`) — the bot uses OpenSea's Drops
+API to fetch stage schedules and build mint transactions.
 
 ---
+
 
 ## Requirements
 

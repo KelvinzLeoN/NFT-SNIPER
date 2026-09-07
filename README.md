@@ -28,7 +28,7 @@ Multi-wallet: paste as many keys as you like and they all fire in parallel.
 Run these **one line at a time**, pressing Enter after each:
 
 ```bash
-git clone https://github.com/morsyxbt/nft-public-mint.git
+git clone https://github.com/KelvinzLeoN/NFT-SNIPER.git
 cd nft-public-mint
 npm install
 npm run build

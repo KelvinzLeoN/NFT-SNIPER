@@ -34,7 +34,7 @@ npm install
 npm run build
 ```
 
-Before running `npm install`, check your prompt ends in `nft-public-mint` — if the
+Before running `npm install`, check your prompt ends in `NFT-SNIPER` — if the
 `cd` didn't take, everything after it fails.
 
 Then confirm the build worked:
